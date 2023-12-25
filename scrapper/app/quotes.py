@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import json
 
 def __scrape_page(category: str):
     res = requests.get(f"https://www.goodreads.com/quotes/tag/{category}")
