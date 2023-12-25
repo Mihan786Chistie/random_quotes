@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .quotes import quotes
+from quotes import quotes
 
 app = FastAPI()
 
