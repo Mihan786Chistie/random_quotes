@@ -1,4 +1,9 @@
-import uvicorn
+from fastapi import FastAPI
+from .quotes import quotes
 
-if __name__ == "__main__":
-    uvicorn.run("app.main:app", reload=True)
+app = FastAPI()
+
+@app.get('/quotes')
+def quotes_text(topic:str | None="motivational"):
+    data = quotes(topic)
+    return data
