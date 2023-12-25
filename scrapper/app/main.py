@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+from .quotes import quotes
 
 app = FastAPI()
 
 @app.get('/quotes')
-def quotes(topic:str | None="motivational"):
-    return {}
+def quotes_text(topic:str | None="motivational"):
+    data = quotes("motivational")
+    return data
